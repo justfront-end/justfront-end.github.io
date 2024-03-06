@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Document</title>
+
+		<style>
+
+			html {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				margin: 0;
+				padding: 0;
+			}
+			
+			
+			body {
+				margin: 0;
+				padding: 0;
+				flex-grow: 1;
+				display: flex;
+				flex-direction: column;
+			}
+
+			div {
+				border-style: solid;
+				border-color: red;
+				border-width: 1px;
+
+				padding: 1rem;
+
+				box-sizing: border-box;
+			}
+
+			.grid-item,
+			.grid-stuff {
+				border-style: solid;
+				border-color: blue;
+				border-width: 1px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div style="display: flex; flex-direction: column; height: 100%;">
+
+			<div>
+				Flex item
+			</div>
+			<div style="flex-grow: 1;">
+				Flex item - Flex-grow: 1
+			</div>
+
+			<div style="flex-grow: 1; display: flex; flex-direction: column;">
+				
+				<div class="grid-stuff" style="display: grid; grid-template-columns: auto auto auto; height: 100%;">
+					<div class="grid-item">
+						Grid item
+						<br>
+						Container of this grid is directly inside of a flexbox, which is also a flex item itself.
+						<br>
+						<mark>Making this grid a flexbox item</mark>.
+					</div>
+					<div class="grid-item">Grid item</div>
+					<div class="grid-item">Grid item</div>
+					<div class="grid-item">Grid item</div>
+					<div class="grid-item">Grid item</div>
+					<div class="grid-item">Grid item</div>
+				</div>
+
+			</div>
+			<div>
+				<div class="grid-stuff" style="display: grid; grid-template-columns: auto auto auto;">
+					<div class="grid-item">
+						Grid item
+						<br>
+						Directly inside of a flex item. 
+						Item is display <mark>block</mark>.
+
+					</div>
+					<div class="grid-item">Grid item</div>
+					<div class="grid-item">Grid item</div>
+					
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
