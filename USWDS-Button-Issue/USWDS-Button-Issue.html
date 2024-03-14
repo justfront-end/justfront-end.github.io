@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Button Issue</title>
+
+
+		<link rel="stylesheet" href="uswds.css">
+
+		<style>
+			.usa-button {
+				background-color: coral;
+			}
+
+		</style>
+	</head>
+	<body style="padding: 2rem;">
+
+		<h3>
+			Problem
+		</h3>
+		<p>
+			Changing the background color of the <code>usa-button</code> should not 
+			affect the background color of all of the button variants.
+			(View source)
+		</p>
+		<button class="usa-button" type="button">Base default</button>
+		<br><br>
+		<button class="usa-button usa-button--secondary" type="button">Secondary</button>
+
+		<br><br>
+		<button class="usa-button usa-button--accent-cool" type="button">Accent Cool</button>
+
+		<br><br>
+		<button class="usa-button usa-button--accent-warm" type="button">Accent Warm</button>
+
+		<br><br>
+		<button class="usa-button usa-button--base" type="button">Base</button> (Not really a base of anything)
+
+
+		<br><br><br>
+		<h3 style="margin-bottom: 0;">
+			Janky workarounds
+		</h3>
+			<h5 style="margin-top: 1em;">Solution 1: Add additional class</h5>
+
+			<code style="white-space-collapse: preserve; background-color: rgba(0,0,0,.05); display: block;">
+	.some-extra-class.usa-button {
+		background-color: coral;
+	}
+			</code>
+
+			<br>
+			<h5>Solution 2: Updating the source css</h5>
+
+			<code style="white-space-collapse: preserve; background-color: rgba(0,0,0,.05); display: block;">
+	// uswda.css
+	.usa-button {
+		background-color: coral;
+	}
+			</code>
+
+
+		<br><br><br>
+		<h3 style="margin-bottom: 0;">
+			Solution
+		</h3>
+			<h5 style="margin-top: 1em;">Better specificity</h5>
+
+			<code style="white-space-collapse: preserve; background-color: rgba(0,0,0,.05); display: block;">
+	// USWDS variant button specifity should be like this. 
+	// Notice the combining of the base class with the variant class.
+	
+	.usa-button.usa-button--secondary {
+		// bg color
+	}
+
+	.usa-button.usa-button--accent-cool {
+		// bg color
+	}
+
+	.usa-button.usa-button--accent-warm {
+		// bg color
+	}
+			</code>
+			
+	</body>
+</html>
